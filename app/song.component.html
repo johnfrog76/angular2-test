@@ -1,0 +1,10 @@
+<h2>Music</h2>
+<ul class="songs">
+    <li *ngFor="let song of songs">
+        <div>{{song.title}}</div>
+        <audio id="audio{{song.id}}" preload="auto" controls="true">
+            <source type="audio/mpeg" src="http://katie.sbtest.com/upload/{{song.audioclip}}">
+                Your browser does not support the audio element.
+        </audio>
+    </li>
+</ul>
