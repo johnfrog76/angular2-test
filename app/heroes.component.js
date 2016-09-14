@@ -18,16 +18,14 @@ var HeroesComponent = (function () {
     }
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes()
+            .subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
     };
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();
     };
     HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
-    };
-    HeroesComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/dashboard', this.selectedHero.id]);
     };
     HeroesComponent = __decorate([
         core_1.Component({

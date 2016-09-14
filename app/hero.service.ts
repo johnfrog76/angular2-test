@@ -1,21 +1,29 @@
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import { Jsonp, URLSearchParams } from '@angular/http';
 
 @Injectable()
 export class HeroService {
-  getHeroes(): Promise<Hero[]> {
-    return Promise.resolve(HEROES);
-  }
+    constructor(private jsonp: Jsonp) { }
+    private heroesUrl = 'http://katie.sbtest.com/api/?mode=bios&callback=JSONP_CALLBACK';
 
-  getHeroesSlowly(): Promise<Hero[]> {
-    return new Promise<Hero[]>(resolve =>
-      setTimeout(resolve, 2000)) // delay 2 seconds
-      .then(() => this.getHeroes());
-  }
+    getHeroes(): Observable<Hero[]> {
+        return this.jsonp.get(this.heroesUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+    private extractData(res: Response) {
+        let body = res.json();
+        return body || {};
+    }
+    private handleError(error: any) {
 
-  getHero(id: number): Promise<Hero> {
-    return this.getHeroes()
-               .then(heroes => heroes.find(hero => hero.id === id));
-  }
+        let errMsg = (error.message) ? error.message :
+            error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+        console.error(errMsg); // log to console instead
+        return Observable.throw(errMsg);
+    }
 }
