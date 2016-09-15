@@ -1,4 +1,9 @@
-.heros img {
+
+h3 {
+    color: blue;
+}
+
+.bios img {
     width: 300px;
     height: auto;
 }

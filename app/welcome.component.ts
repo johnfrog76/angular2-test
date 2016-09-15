@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Bio } from './bio';
-import { BioService } from './bio.service';
+import { Bio } from './bios';
+import { BioService } from './bios.service';
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component.css']
+    templateUrl: 'app/welcome.component.html',
+    styleUrls: ['app/welcome.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class WelcomeComponent implements OnInit {
 
-    bios: Bio[] = [];
+    bio: Bio[];
 
     constructor(
         private router: Router,
-        private bioService: BioService) {
-    }
+        private bioService: biosService) { }
 
     getBios() {
         this.bioService.getBios()

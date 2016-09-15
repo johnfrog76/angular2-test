@@ -1,0 +1,7 @@
+<h3>Musician Bios</h3>
+<div class="bios" *ngFor="let bio of bios">
+    <h4>{{bio.name}}</h4>
+    <h5>{{bio.title}}</h5>
+    <img src="http://katie.sbtest.com/upload/{{bio.img}}">
+    <p>{{bio.copy}}</p>
+</div>

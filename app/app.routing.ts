@@ -2,7 +2,7 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
+import { BiosComponent }      from './bios.component';
 import { SongsComponent }      from './song.component';
 
 const appRoutes: Routes = [
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'bios',
-        component: HeroesComponent
+        component: BiosComponent
     },
     {
         path: 'music',

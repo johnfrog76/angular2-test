@@ -14,9 +14,9 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard.component');
-var heroes_component_1 = require('./heroes.component');
+var bios_component_1 = require('./bios.component');
 var song_component_1 = require('./song.component');
-var hero_service_1 = require('./hero.service');
+var bio_service_1 = require('./bio.service');
 var song_service_1 = require('./song.service');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
@@ -34,11 +34,11 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 dashboard_component_1.DashboardComponent,
-                heroes_component_1.HeroesComponent,
+                bios_component_1.BiosComponent,
                 song_component_1.SongsComponent
             ],
             providers: [
-                hero_service_1.HeroService,
+                bio_service_1.BioService,
                 song_service_1.SongService
             ],
             bootstrap: [app_component_1.AppComponent]

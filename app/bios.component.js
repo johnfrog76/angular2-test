@@ -11,29 +11,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var bio_service_1 = require('./bio.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(router, bioService) {
+var BiosComponent = (function () {
+    function BiosComponent(router, bioService) {
         this.router = router;
         this.bioService = bioService;
-        this.bios = [];
     }
-    DashboardComponent.prototype.getBios = function () {
+    BiosComponent.prototype.getBios = function () {
         var _this = this;
         this.bioService.getBios()
             .subscribe(function (bios) { return _this.bios = bios; });
     };
-    DashboardComponent.prototype.ngOnInit = function () {
+    BiosComponent.prototype.ngOnInit = function () {
         this.getBios();
     };
-    DashboardComponent = __decorate([
+    BiosComponent = __decorate([
         core_1.Component({
-            selector: 'my-dashboard',
-            templateUrl: 'app/dashboard.component.html',
-            styleUrls: ['app/dashboard.component.css']
+            selector: 'my-bios',
+            templateUrl: 'app/bios.component.html',
+            styleUrls: ['app/bios.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, bio_service_1.BioService])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], BiosComponent);
+    return BiosComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.BiosComponent = BiosComponent;
+//# sourceMappingURL=bios.component.js.map

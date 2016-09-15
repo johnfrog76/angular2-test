@@ -1,7 +1,7 @@
 "use strict";
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard.component');
-var heroes_component_1 = require('./heroes.component');
+var bios_component_1 = require('./bios.component');
 var song_component_1 = require('./song.component');
 var appRoutes = [
     {
@@ -15,7 +15,7 @@ var appRoutes = [
     },
     {
         path: 'bios',
-        component: heroes_component_1.HeroesComponent
+        component: bios_component_1.BiosComponent
     },
     {
         path: 'music',

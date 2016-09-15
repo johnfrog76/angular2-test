@@ -10,29 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_service_1 = require('./hero.service');
-var HeroesComponent = (function () {
-    function HeroesComponent(router, heroService) {
+var WelcomeComponent = (function () {
+    function WelcomeComponent(router, bioService) {
         this.router = router;
-        this.heroService = heroService;
+        this.bioService = bioService;
     }
-    HeroesComponent.prototype.getHeroes = function () {
+    WelcomeComponent.prototype.getBios = function () {
         var _this = this;
-        this.heroService.getHeroes()
-            .subscribe(function (heroes) { return _this.heroes = heroes; });
+        this.bioService.getBios()
+            .subscribe(function (bios) { return _this.bios = bios; });
     };
-    HeroesComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
+    WelcomeComponent.prototype.ngOnInit = function () {
+        this.getBios();
     };
-    HeroesComponent = __decorate([
+    WelcomeComponent = __decorate([
         core_1.Component({
-            selector: 'my-heroes',
-            templateUrl: 'app/heroes.component.html',
-            styleUrls: ['app/heroes.component.css']
+            selector: 'my-dashboard',
+            templateUrl: 'app/welcome.component.html',
+            styleUrls: ['app/welcome.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
-    ], HeroesComponent);
-    return HeroesComponent;
+        __metadata('design:paramtypes', [router_1.Router, Object])
+    ], WelcomeComponent);
+    return WelcomeComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
-//# sourceMappingURL=heroes.component.js.map
+exports.WelcomeComponent = WelcomeComponent;
+//# sourceMappingURL=welcome.component.js.map

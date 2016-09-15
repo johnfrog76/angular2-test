@@ -1,6 +1,11 @@
 
-
+/* notice still encapsulated */
 li {
     display: inline;
     margin-left: 10px;
+    border: 1px solid green;
+}
+
+h3 {
+    color: green;
 }

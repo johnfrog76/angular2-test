@@ -1,0 +1,8 @@
+<h3>Welcome</h3>
+<div class="">
+  <ul class="">
+    <li *ngFor="let bio of bios" (click)="gotoDetail(bio)" class="">
+      {{bio.name}}
+    </li>
+</ul>
+</div>

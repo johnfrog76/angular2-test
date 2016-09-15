@@ -4,9 +4,9 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
+import { BiosComponent }      from './bios.component';
 import { SongsComponent }      from './song.component';
-import { HeroService }          from './hero.service';
+import { BioService }          from './bio.service';
 import { SongService }          from './song.service';
 
 import { routing } from './app.routing';
@@ -22,11 +22,11 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroesComponent,
+    BiosComponent,
     SongsComponent
   ],
   providers: [
-    HeroService,
+    BioService,
     SongService
   ],
   bootstrap: [ AppComponent ]

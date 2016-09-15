@@ -1,4 +1,4 @@
-export class Hero {
+export class Bio {
   id: number;
   name: string;
   title: string;

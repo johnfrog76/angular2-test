@@ -11,31 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Rx_1 = require('rxjs/Rx');
 var http_1 = require('@angular/http');
-var HeroService = (function () {
-    function HeroService(jsonp) {
+var BioService = (function () {
+    function BioService(jsonp) {
         this.jsonp = jsonp;
-        this.heroesUrl = 'http://katie.sbtest.com/api/?mode=bios&callback=JSONP_CALLBACK';
+        this.biosUrl = 'http://katie.sbtest.com/api/?mode=bios&callback=JSONP_CALLBACK';
     }
-    HeroService.prototype.getHeroes = function () {
-        return this.jsonp.get(this.heroesUrl)
+    BioService.prototype.getBios = function () {
+        return this.jsonp.get(this.biosUrl)
             .map(this.extractData)
             .catch(this.handleError);
     };
-    HeroService.prototype.extractData = function (res) {
+    BioService.prototype.extractData = function (res) {
         var body = res.json();
         return body || {};
     };
-    HeroService.prototype.handleError = function (error) {
+    BioService.prototype.handleError = function (error) {
         var errMsg = (error.message) ? error.message :
             error.status ? error.status + " - " + error.statusText : 'Server error';
         console.error(errMsg); // log to console instead
         return Rx_1.Observable.throw(errMsg);
     };
-    HeroService = __decorate([
+    BioService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Jsonp])
-    ], HeroService);
-    return HeroService;
+    ], BioService);
+    return BioService;
 }());
-exports.HeroService = HeroService;
-//# sourceMappingURL=hero.service.js.map
+exports.BioService = BioService;
+//# sourceMappingURL=bio.service.js.map
