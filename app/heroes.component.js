@@ -24,9 +24,6 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();
     };
-    HeroesComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
     HeroesComponent = __decorate([
         core_1.Component({
             selector: 'my-heroes',

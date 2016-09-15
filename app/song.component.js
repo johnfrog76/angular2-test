@@ -12,20 +12,23 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var song_service_1 = require('./song.service');
 var SongsComponent = (function () {
-    function SongsComponent(router, songsService) {
+    function SongsComponent(router, songService) {
         this.router = router;
-        this.songsService = songsService;
-        this.songs = [];
+        this.songService = songService;
     }
-    SongsComponent.prototype.ngOnInit = function () {
+    SongsComponent.prototype.getSongs = function () {
         var _this = this;
-        this.songsService.getSongs()
-            .then(function (songs) { return _this.songs = songs; });
+        this.songService.getSongs()
+            .subscribe(function (songs) { return _this.songs = songs; });
+    };
+    SongsComponent.prototype.ngOnInit = function () {
+        this.getSongs();
     };
     SongsComponent = __decorate([
         core_1.Component({
             selector: 'my-songs',
-            templateUrl: 'app/song.component.html'
+            templateUrl: 'app/song.component.html',
+            styleUrls: ['app/song.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, song_service_1.SongService])
     ], SongsComponent);

@@ -8,21 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_songs_1 = require('./mock-songs');
 var core_1 = require('@angular/core');
+var Rx_1 = require('rxjs/Rx');
+var http_1 = require('@angular/http');
 var SongService = (function () {
-    function SongService() {
+    function SongService(jsonp) {
+        this.jsonp = jsonp;
+        this.songsUrl = 'http://katie.sbtest.com/api/?mode=songs&callback=JSONP_CALLBACK';
     }
     SongService.prototype.getSongs = function () {
-        return Promise.resolve(mock_songs_1.SONGS);
+        return this.jsonp.get(this.songsUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
     };
-    SongService.prototype.getSong = function (id) {
-        return this.getSongs()
-            .then(function (songs) { return songs.find(function (song) { return song.id === id; }); });
+    SongService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    SongService.prototype.handleError = function (error) {
+        var errMsg = (error.message) ? error.message :
+            error.status ? error.status + " - " + error.statusText : 'Server error';
+        console.error(errMsg); // log to console instead
+        return Rx_1.Observable.throw(errMsg);
     };
     SongService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Jsonp])
     ], SongService);
     return SongService;
 }());

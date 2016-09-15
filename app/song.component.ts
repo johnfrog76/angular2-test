@@ -6,20 +6,24 @@ import { SongService } from './song.service';
 
 @Component({
   selector: 'my-songs',
-  templateUrl: 'app/song.component.html'
-  //styleUrls: ['app/song.component.css']
+  templateUrl: 'app/song.component.html',
+  styleUrls: ['app/song.component.css']
 })
 export class SongsComponent implements OnInit {
+    songs: Song[];
 
-  songs: Song[] = [];
+    constructor(
+        private router: Router,
+        private songService: SongService) { }
 
-  constructor(
-    private router: Router,
-    private songsService: SongService) {
-  }
+    getSongs() {
+        this.songService.getSongs()
+            .subscribe(
+            songs => this.songs = songs
+            );
+    }
 
-  ngOnInit(): void {
-    this.songsService.getSongs()
-      .then(songs => this.songs = songs);
-  }
+    ngOnInit(): void {
+        this.getSongs();
+    }
 }
