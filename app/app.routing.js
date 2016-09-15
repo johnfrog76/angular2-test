@@ -1,21 +1,22 @@
 "use strict";
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard.component');
+var welcome_component_1 = require('./welcome.component');
 var bios_component_1 = require('./bios.component');
 var song_component_1 = require('./song.component');
 var appRoutes = [
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/welcome',
         pathMatch: 'full'
     },
     {
-        path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        path: 'welcome',
+        component: welcome_component_1.WelcomeComponent
     },
     {
         path: 'bios',
-        component: bios_component_1.BiosComponent
+        component: bios_component_1.BiosComponent,
+        children: []
     },
     {
         path: 'music',

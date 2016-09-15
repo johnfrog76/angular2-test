@@ -13,11 +13,12 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var dashboard_component_1 = require('./dashboard.component');
+var welcome_component_1 = require('./welcome.component');
 var bios_component_1 = require('./bios.component');
 var song_component_1 = require('./song.component');
 var bio_service_1 = require('./bio.service');
 var song_service_1 = require('./song.service');
+var page_service_1 = require('./page.service');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -33,13 +34,14 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                dashboard_component_1.DashboardComponent,
+                welcome_component_1.WelcomeComponent,
                 bios_component_1.BiosComponent,
                 song_component_1.SongsComponent
             ],
             providers: [
                 bio_service_1.BioService,
-                song_service_1.SongService
+                song_service_1.SongService,
+                page_service_1.PageService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

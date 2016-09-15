@@ -10,26 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var page_service_1 = require('./page.service');
 var WelcomeComponent = (function () {
-    function WelcomeComponent(router, bioService) {
+    function WelcomeComponent(router, pageService) {
         this.router = router;
-        this.bioService = bioService;
+        this.pageService = pageService;
+        this.pages = [];
     }
-    WelcomeComponent.prototype.getBios = function () {
+    WelcomeComponent.prototype.getPages = function () {
         var _this = this;
-        this.bioService.getBios()
-            .subscribe(function (bios) { return _this.bios = bios; });
+        this.pageService.getPages()
+            .subscribe(function (pages) { return _this.pages = pages; });
     };
     WelcomeComponent.prototype.ngOnInit = function () {
-        this.getBios();
+        this.getPages();
     };
     WelcomeComponent = __decorate([
         core_1.Component({
-            selector: 'my-dashboard',
+            selector: 'welcome',
             templateUrl: 'app/welcome.component.html',
             styleUrls: ['app/welcome.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.Router, Object])
+        __metadata('design:paramtypes', [router_1.Router, page_service_1.PageService])
     ], WelcomeComponent);
     return WelcomeComponent;
 }());

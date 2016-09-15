@@ -1,30 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Bio } from './bios';
-import { BioService } from './bios.service';
+import { Page } from './pageCls';
+import { PageService } from './page.service';
 
 @Component({
-    selector: 'my-dashboard',
+    selector: 'welcome',
     templateUrl: 'app/welcome.component.html',
     styleUrls: ['app/welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
 
-    bio: Bio[];
+    pages: Page[] = [];
 
     constructor(
         private router: Router,
-        private bioService: biosService) { }
+        private pageService: PageService) {
+    }
 
-    getBios() {
-        this.bioService.getBios()
+    getPages() {
+        this.pageService.getPages()
             .subscribe(
-            bios => this.bios = bios
+            pages => this.pages = pages
             );
     }
 
     ngOnInit(): void {
-        this.getBios();
+        this.getPages();
     }
 }

@@ -1,23 +1,29 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent }   from './dashboard.component';
+import { WelcomeComponent }   from './welcome.component';
 import { BiosComponent }      from './bios.component';
 import { SongsComponent }      from './song.component';
 
 const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/welcome',
         pathMatch: 'full'
     },
     {
-        path: 'dashboard',
-        component: DashboardComponent
+        path: 'welcome',
+        component: WelcomeComponent
     },
     {
         path: 'bios',
-        component: BiosComponent
+        component: BiosComponent,
+        children: [
+            // {
+            //   path: '',
+            //   component: CrisisCenterHomeComponent
+            // }
+        ]
     },
     {
         path: 'music',

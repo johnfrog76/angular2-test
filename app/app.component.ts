@@ -11,11 +11,11 @@ import { Component } from '@angular/core';
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" routerLink="/dashboard">{{title}}</a>
+            <a class="navbar-brand" routerLink="/welcome">{{title}}</a>
          </div>
          <div class="collapse navbar-collapse ng-scope" [class.in]="navToggle">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a routerLink="/dashboard" (click)="toggleClass()">Dashboard</a></li>
+                <li routerLinkActive="active"><a routerLink="/welcome" (click)="toggleClass()">Welcome</a></li>
                 <li routerLinkActive="active"><a routerLink="/bios"  (click)="toggleClass()">Bios</a></li>
                 <li routerLinkActive="active"><a routerLink="/music" (click)="toggleClass()">Music</a></li>
             </ul>
