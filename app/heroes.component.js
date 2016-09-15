@@ -19,7 +19,7 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getHeroes()
-            .subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
+            .subscribe(function (heroes) { return _this.heroes = heroes; });
     };
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();

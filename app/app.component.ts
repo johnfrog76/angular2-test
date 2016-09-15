@@ -15,9 +15,9 @@ import { Component } from '@angular/core';
          </div>
          <div class="collapse navbar-collapse ng-scope" [class.in]="navToggle">
             <ul class="nav navbar-nav">
-                <li><a routerLink="/dashboard" routerLinkActive="active" (click)="toggleClass()">Dashboard</a></li>
-                <li><a routerLink="/bios" routerLinkActive="active" (click)="toggleClass()">Bios</a></li>
-                <li><a routerLink="/music" routerLinkActive="active" (click)="toggleClass()">Music</a></li>
+                <li routerLinkActive="active"><a routerLink="/dashboard" (click)="toggleClass()">Dashboard</a></li>
+                <li routerLinkActive="active"><a routerLink="/bios"  (click)="toggleClass()">Bios</a></li>
+                <li routerLinkActive="active"><a routerLink="/music" (click)="toggleClass()">Music</a></li>
             </ul>
         </div>
     </div>
@@ -29,7 +29,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Webster Quartet';
-  navToggle = false;
+  navToggle: boolean = false;
+  pageStr = '';
+
   toggleClass (): void {
       this.navToggle = !this.navToggle;
   };

@@ -2,7 +2,6 @@
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
 var song_component_1 = require('./song.component');
 var appRoutes = [
     {
@@ -13,10 +12,6 @@ var appRoutes = [
     {
         path: 'dashboard',
         component: dashboard_component_1.DashboardComponent
-    },
-    {
-        path: 'dashboard/:id',
-        component: hero_detail_component_1.HeroDetailComponent
     },
     {
         path: 'bios',

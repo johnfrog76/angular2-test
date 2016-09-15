@@ -17,14 +17,13 @@ var DashboardComponent = (function () {
         this.heroService = heroService;
         this.heroes = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    DashboardComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getHeroes()
-            .then(function (heroes) { return _this.heroes = heroes.slice(0, 4); });
+            .subscribe(function (heroes) { return _this.heroes = heroes; });
     };
-    DashboardComponent.prototype.gotoDetail = function (hero) {
-        var link = ['/dashboard', hero.id];
-        this.router.navigate(link);
+    DashboardComponent.prototype.ngOnInit = function () {
+        this.getHeroes();
     };
     DashboardComponent = __decorate([
         core_1.Component({

@@ -14,7 +14,6 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard.component');
-var hero_detail_component_1 = require('./hero-detail.component');
 var heroes_component_1 = require('./heroes.component');
 var song_component_1 = require('./song.component');
 var hero_service_1 = require('./hero.service');
@@ -35,7 +34,6 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 dashboard_component_1.DashboardComponent,
-                hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
                 song_component_1.SongsComponent
             ],

@@ -20,8 +20,7 @@ export class HeroesComponent implements OnInit {
 getHeroes() {
   this.heroService.getHeroes()
     .subscribe(
-        heroes => this.heroes = heroes,
-        error => this.errorMessage = <any>error
+        heroes => this.heroes = heroes
     );
 }
 

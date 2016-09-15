@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent }   from './dashboard.component';
 import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
 import { SongsComponent }      from './song.component';
 
 const appRoutes: Routes = [
@@ -15,10 +14,6 @@ const appRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent
-    },
-    {
-        path: 'dashboard/:id',
-        component: HeroDetailComponent
     },
     {
         path: 'bios',
