@@ -5,11 +5,17 @@ import { Page } from './pageCls';
 import { PageService } from './page.service';
 
 @Component({
-    selector: 'welcome',
-    templateUrl: 'app/welcome.component.html',
-    styleUrls: ['app/welcome.component.css']
+    selector: 'music-intro',
+    template: `
+        <h1>Music</h1>
+        <div class="music-intro">
+            <p *ngFor="let page of pages">
+              {{page.text}}
+          </p>
+        </div>
+    `
 })
-export class WelcomeComponent implements OnInit {
+export class MusicIntroComponent implements OnInit {
 
     pages: Page[] = [];
 
@@ -19,7 +25,7 @@ export class WelcomeComponent implements OnInit {
     }
 
     getPages() {
-        this.pageService.getPages('welcome')
+        this.pageService.getPages('music')
             .subscribe(
             pages => this.pages = pages
             );

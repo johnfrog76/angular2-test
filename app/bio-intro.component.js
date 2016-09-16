@@ -11,29 +11,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var page_service_1 = require('./page.service');
-var WelcomeComponent = (function () {
-    function WelcomeComponent(router, pageService) {
+var BioIntroComponent = (function () {
+    function BioIntroComponent(router, pageService) {
         this.router = router;
         this.pageService = pageService;
         this.pages = [];
     }
-    WelcomeComponent.prototype.getPages = function () {
+    BioIntroComponent.prototype.getPages = function () {
         var _this = this;
-        this.pageService.getPages('welcome')
+        this.pageService.getPages('bios')
             .subscribe(function (pages) { return _this.pages = pages; });
     };
-    WelcomeComponent.prototype.ngOnInit = function () {
+    BioIntroComponent.prototype.ngOnInit = function () {
         this.getPages();
     };
-    WelcomeComponent = __decorate([
+    BioIntroComponent = __decorate([
         core_1.Component({
-            selector: 'welcome',
-            templateUrl: 'app/welcome.component.html',
-            styleUrls: ['app/welcome.component.css']
+            selector: 'bio-intro',
+            template: "\n        <h1>Bios</h1>\n        <div class=\"bio-intro\">\n            <p *ngFor=\"let page of pages\">\n              {{page.text}}\n          </p>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [router_1.Router, page_service_1.PageService])
-    ], WelcomeComponent);
-    return WelcomeComponent;
+    ], BioIntroComponent);
+    return BioIntroComponent;
 }());
-exports.WelcomeComponent = WelcomeComponent;
-//# sourceMappingURL=welcome.component.js.map
+exports.BioIntroComponent = BioIntroComponent;
+//# sourceMappingURL=bio-intro.component.js.map

@@ -1,7 +1,13 @@
-<h3>Musician Bios</h3>
-<div class="bios" *ngFor="let bio of bios">
-    <h4>{{bio.name}}</h4>
-    <h5>{{bio.title}}</h5>
-    <img src="http://katie.sbtest.com/upload/{{bio.img}}">
-    <p>{{bio.copy}}</p>
+<bio-intro></bio-intro>
+
+<div class="row bios">
+    <div class="bio" *ngFor="let bio of bios">
+        <div class="wrap">
+            <h3>{{bio.name}}</h3>
+            <div class="bio-title">{{bio.title}}</div>
+            <div class="img-container" [ngStyle]="{'background-image': 'url(http://katie.sbtest.com/upload/' + bio.img + ')'}" ></div>
+            <p>{{bio.copy}}</p>
+            <hr>
+        </div>
+    </div>
 </div>

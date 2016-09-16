@@ -16,18 +16,17 @@ var PageService = (function () {
         this.jsonp = jsonp;
         this.pageUrl = 'http://katie.sbtest.com/api/?mode=pages&callback=JSONP_CALLBACK';
     }
-    PageService.prototype.getPages = function () {
+    PageService.prototype.getPages = function (pageType) {
         return this.jsonp.get(this.pageUrl)
-            .map(this.extractData)
+            .map(this.extractData, pageType)
             .catch(this.handleError);
     };
     PageService.prototype.extractData = function (res) {
         var i;
-        var key = 'welcome';
         var body = res.json();
         var retArray = [];
         for (i = 0; i < body.length; i++) {
-            if (body[i].name === key) {
+            if (body[i].name === this) {
                 retArray = body[i].page_content.slice(0);
                 break;
             }

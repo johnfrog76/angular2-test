@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Webster Quartet';
+        this.title = 'WEBSTER QUARTET';
         this.navToggle = false;
         this.pageStr = '';
     }
@@ -22,7 +22,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <div id=\"navbar\" class=\"navbar navbar-inverse ng-scope\" ui-view=\"primarynav\">\n        <div class=\"navbar-header ng-scope\">\n            <button type=\"button\" class=\"navbar-toggle\" (click)=\"toggleClass()\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" routerLink=\"/welcome\">{{title}}</a>\n         </div>\n         <div class=\"collapse navbar-collapse ng-scope\" [class.in]=\"navToggle\">\n            <ul class=\"nav navbar-nav\">\n                <li routerLinkActive=\"active\"><a routerLink=\"/welcome\" (click)=\"toggleClass()\">Welcome</a></li>\n                <li routerLinkActive=\"active\"><a routerLink=\"/bios\"  (click)=\"toggleClass()\">Bios</a></li>\n                <li routerLinkActive=\"active\"><a routerLink=\"/music\" (click)=\"toggleClass()\">Music</a></li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container\">\n        <router-outlet></router-outlet>\n    </div>\n  ",
+            template: "\n    <div id=\"navbar\" class=\"navbar navbar-inverse ng-scope\" ui-view=\"primarynav\">\n        <div class=\"navbar-header ng-scope\">\n            <button type=\"button\" class=\"navbar-toggle\" (click)=\"toggleClass()\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" routerLink=\"/welcome\">{{title}}</a>\n         </div>\n         <div class=\"collapse navbar-collapse ng-scope\" [class.in]=\"navToggle\">\n            <ul class=\"nav navbar-nav\">\n                <li routerLinkActive=\"active\"><a routerLink=\"/welcome\" (click)=\"toggleClass()\">Welcome</a></li>\n                <li routerLinkActive=\"active\"><a routerLink=\"/bios\"  (click)=\"toggleClass()\">Bios</a></li>\n                <li routerLinkActive=\"active\"><a routerLink=\"/music\" (click)=\"toggleClass()\">Music</a></li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container\">\n        <router-outlet></router-outlet>\n    </div>\n    <common-footer></common-footer>\n  ",
             styleUrls: ['app/app.component.css'],
         }), 
         __metadata('design:paramtypes', [])

@@ -11,29 +11,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var page_service_1 = require('./page.service');
-var WelcomeComponent = (function () {
-    function WelcomeComponent(router, pageService) {
+var MusicIntroComponent = (function () {
+    function MusicIntroComponent(router, pageService) {
         this.router = router;
         this.pageService = pageService;
         this.pages = [];
     }
-    WelcomeComponent.prototype.getPages = function () {
+    MusicIntroComponent.prototype.getPages = function () {
         var _this = this;
-        this.pageService.getPages('welcome')
+        this.pageService.getPages('music')
             .subscribe(function (pages) { return _this.pages = pages; });
     };
-    WelcomeComponent.prototype.ngOnInit = function () {
+    MusicIntroComponent.prototype.ngOnInit = function () {
         this.getPages();
     };
-    WelcomeComponent = __decorate([
+    MusicIntroComponent = __decorate([
         core_1.Component({
-            selector: 'welcome',
-            templateUrl: 'app/welcome.component.html',
-            styleUrls: ['app/welcome.component.css']
+            selector: 'music-intro',
+            template: "\n        <h1>Music</h1>\n        <div class=\"music-intro\">\n            <p *ngFor=\"let page of pages\">\n              {{page.text}}\n          </p>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [router_1.Router, page_service_1.PageService])
-    ], WelcomeComponent);
-    return WelcomeComponent;
+    ], MusicIntroComponent);
+    return MusicIntroComponent;
 }());
-exports.WelcomeComponent = WelcomeComponent;
-//# sourceMappingURL=welcome.component.js.map
+exports.MusicIntroComponent = MusicIntroComponent;
+//# sourceMappingURL=music-intro.component.js.map

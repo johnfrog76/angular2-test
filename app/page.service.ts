@@ -12,20 +12,19 @@ export class PageService {
     constructor(private jsonp: Jsonp) { }
     private pageUrl = 'http://katie.sbtest.com/api/?mode=pages&callback=JSONP_CALLBACK';
 
-    getPages(): Observable<Page[]> {
+    getPages(pageType): Observable<Page[]> {
         return this.jsonp.get(this.pageUrl)
-            .map(this.extractData)
+            .map(this.extractData, pageType)
             .catch(this.handleError);
     }
 
     private extractData(res: Response) {
         let i: number;
-        let key = 'welcome';
         let body = res.json();
         let retArray = [];
 
         for (i = 0; i  < body.length; i++) {
-            if (body[i].name === key) {
+            if (body[i].name === this) {
                 retArray = body[i].page_content.slice(0);
                 break;
             }

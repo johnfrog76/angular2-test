@@ -16,6 +16,9 @@ var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./welcome.component');
 var bios_component_1 = require('./bios.component');
 var song_component_1 = require('./song.component');
+var footer_component_1 = require('./footer.component');
+var music_intro_component_1 = require('./music-intro.component');
+var bio_intro_component_1 = require('./bio-intro.component');
 var bio_service_1 = require('./bio.service');
 var song_service_1 = require('./song.service');
 var page_service_1 = require('./page.service');
@@ -36,7 +39,10 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 welcome_component_1.WelcomeComponent,
                 bios_component_1.BiosComponent,
-                song_component_1.SongsComponent
+                song_component_1.SongsComponent,
+                footer_component_1.FooterComponent,
+                music_intro_component_1.MusicIntroComponent,
+                bio_intro_component_1.BioIntroComponent
             ],
             providers: [
                 bio_service_1.BioService,

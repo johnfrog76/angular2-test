@@ -5,11 +5,17 @@ import { Page } from './pageCls';
 import { PageService } from './page.service';
 
 @Component({
-    selector: 'welcome',
-    templateUrl: 'app/welcome.component.html',
-    styleUrls: ['app/welcome.component.css']
+    selector: 'bio-intro',
+    template: `
+        <h1>Bios</h1>
+        <div class="bio-intro">
+            <p *ngFor="let page of pages">
+              {{page.text}}
+          </p>
+        </div>
+    `
 })
-export class WelcomeComponent implements OnInit {
+export class BioIntroComponent implements OnInit {
 
     pages: Page[] = [];
 
@@ -19,7 +25,7 @@ export class WelcomeComponent implements OnInit {
     }
 
     getPages() {
-        this.pageService.getPages('welcome')
+        this.pageService.getPages('bios')
             .subscribe(
             pages => this.pages = pages
             );

@@ -5,11 +5,15 @@ import { Page } from './pageCls';
 import { PageService } from './page.service';
 
 @Component({
-    selector: 'welcome',
-    templateUrl: 'app/welcome.component.html',
-    styleUrls: ['app/welcome.component.css']
+    selector: 'common-footer',
+    template: `
+        <div class="footer">
+            <div *ngFor="let page of pages" [innerHTML]="page.text"></div>
+        </div>
+    `,
+    styleUrls: ['app/footer.component.css']
 })
-export class WelcomeComponent implements OnInit {
+export class FooterComponent implements OnInit {
 
     pages: Page[] = [];
 
@@ -19,7 +23,7 @@ export class WelcomeComponent implements OnInit {
     }
 
     getPages() {
-        this.pageService.getPages('welcome')
+        this.pageService.getPages('footer')
             .subscribe(
             pages => this.pages = pages
             );

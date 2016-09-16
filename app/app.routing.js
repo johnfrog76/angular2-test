@@ -15,8 +15,7 @@ var appRoutes = [
     },
     {
         path: 'bios',
-        component: bios_component_1.BiosComponent,
-        children: []
+        component: bios_component_1.BiosComponent
     },
     {
         path: 'music',

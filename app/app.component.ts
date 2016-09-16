@@ -24,11 +24,12 @@ import { Component } from '@angular/core';
     <div class="container">
         <router-outlet></router-outlet>
     </div>
+    <common-footer></common-footer>
   `,
   styleUrls: ['app/app.component.css'],
 })
 export class AppComponent {
-  title = 'Webster Quartet';
+  title = 'WEBSTER QUARTET';
   navToggle: boolean = false;
   pageStr = '';
 

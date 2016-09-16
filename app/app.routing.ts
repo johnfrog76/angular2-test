@@ -2,8 +2,8 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { WelcomeComponent }   from './welcome.component';
-import { BiosComponent }      from './bios.component';
-import { SongsComponent }      from './song.component';
+import { BiosComponent } from './bios.component';
+import { SongsComponent } from './song.component';
 
 const appRoutes: Routes = [
     {
@@ -17,13 +17,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'bios',
-        component: BiosComponent,
-        children: [
-            // {
-            //   path: '',
-            //   component: CrisisCenterHomeComponent
-            // }
-        ]
+        component: BiosComponent
     },
     {
         path: 'music',

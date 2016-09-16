@@ -1,0 +1,273 @@
+body {
+  background-color: #212121;
+  color: #eee;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 6.6rem;
+  font-family: Lobster;
+  color: #e91e63;
+}
+
+h3 {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
+a,
+a:link,
+a:visited {
+  color: #ccc;
+}
+
+a:focus,
+a:hover {
+  color: #bfbfbf;
+}
+
+.btn-group a,
+.btn-group a:link,
+.btn-group a:visited {
+  color: rgba(239, 239, 239, 0.5);
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group a:focus,
+.btn-group a:hover {
+  color: rgba(239, 239, 239, 0.5);
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+.disabled-btn {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.outer {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-inverse {
+  border-radius: 0;
+  border: none;
+  background-color: #ad1457;
+}
+
+.navbar-inverse .navbar-collapse {
+  border-color: #212121;
+  box-shadow: none;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-toggle {
+  float: left;
+  border: 0;
+  margin-left: 5px;
+  margin-right: auto;
+  margin-top: 9px;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: transparent;
+  opacity: 0.9;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-inverse .nav.navbar-nav > li > a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-inverse .nav.navbar-nav > li > a:focus,
+.navbar-inverse .nav.navbar-nav > li > a:hover {
+  background-color: rgba(136, 14, 79, 0.3);
+  color: #fff;
+}
+
+.navbar-inverse .nav.navbar-nav > .active > a {
+  background-color: rgba(136, 14, 79, 0.6);
+  color: #fff;
+}
+
+.navbar-inverse .dropdown-menu {
+  background-color: rgba(239, 239, 239, 0.3);
+  border: none;
+  border-radius: 0;
+}
+
+.navbar-inverse .dropdown-menu > li > a:focus,
+.navbar-inverse .dropdown-menu > li > a:hover {
+  background-color: rgba(239, 239, 239, 0.3);
+  color: #fff;
+}
+
+.navbar-inverse .dropdown-menu > li.active a {
+  background-color: #8bc34a;
+  border-left: 4px solid rgba(139, 195, 74, 0.6);
+  color: #fff;
+}
+
+.error {
+  text-align: center;
+  padding: 0 10px;
+  background-color: red;
+  color: #fff;
+}
+
+.loading {
+  text-align: center;
+  padding: 0 10px;
+  background-color: #71a436;
+  color: #fff;
+}
+
+.bios {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 3rem;
+}
+
+.bios .bio {
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .bios .bio {
+    height: 56rem;
+    overflow: hidden;
+    width: 30%;
+    margin-right: 3%;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+  }
+}
+
+.bios .bio .bio-title {
+  color: #616161;
+}
+
+.bios .bio .wrap .img-container {
+  width: 100%;
+  height: 80vw;
+  margin: 1rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 48rem) {
+  .bios .bio .wrap .img-container {
+    width: 100%;
+    height: 23vw;
+    max-height: 32rem;
+  }
+}
+
+.bios .bio hr {
+  height: 0;
+  border-top: 1px solid #3b3b3b;
+}
+
+@media (min-width: 48rem) {
+  .bios .bio hr {
+    display: none;
+  }
+}
+
+.bios .bio:last-child hr {
+  display: none;
+}
+
+.container.main {
+  min-height: 300px;
+}
+
+.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0;
+}
+
+.song-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #424242;
+  position: relative;
+}
+
+.song-list li:first-of-type {
+  border-top: 1px solid #424242;
+}
+
+.song-list .btn {
+  color: #ff3478;
+  text-decoration: none;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.8rem;
+}
+
+.song-list .btn.active {
+  color: #ff80ab;
+}
+
+.song-list .btn:hover, .song-list .btn:focus {
+  outline: none;
+}
+
+@media (min-width: 48rem) {
+  .song-list {
+    columns: 2;
+    -moz-columns: 2;
+  }
+  .song-list li {
+    padding: 1rem;
+    background-color: #424242;
+    margin: 0 0 1rem 0;
+    border: 0;
+  }
+}
+
+.progress {
+  height: 4px;
+  width: 22vw;
+  max-width: 117px;
+  display: inline-block;
+  position: absolute;
+  right: 58px;
+  top: 17px;
+  background-color: #292929;
+}
+
+.progress-bar {
+  background-color: #e91e63;
+}
+
+.footer {
+  margin: 3rem 0;
+  font-size: 11px;
+  background-color: #2e2e2e;
+  padding: 3rem 0 3rem 1.5rem;
+}
+
+.footer p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 48rem) {
+  .footer {
+    text-align: center;
+    padding: 3rem 0 3rem 0rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

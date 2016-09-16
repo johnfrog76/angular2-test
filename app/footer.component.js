@@ -11,29 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var page_service_1 = require('./page.service');
-var WelcomeComponent = (function () {
-    function WelcomeComponent(router, pageService) {
+var FooterComponent = (function () {
+    function FooterComponent(router, pageService) {
         this.router = router;
         this.pageService = pageService;
         this.pages = [];
     }
-    WelcomeComponent.prototype.getPages = function () {
+    FooterComponent.prototype.getPages = function () {
         var _this = this;
-        this.pageService.getPages('welcome')
+        this.pageService.getPages('footer')
             .subscribe(function (pages) { return _this.pages = pages; });
     };
-    WelcomeComponent.prototype.ngOnInit = function () {
+    FooterComponent.prototype.ngOnInit = function () {
         this.getPages();
     };
-    WelcomeComponent = __decorate([
+    FooterComponent = __decorate([
         core_1.Component({
-            selector: 'welcome',
-            templateUrl: 'app/welcome.component.html',
-            styleUrls: ['app/welcome.component.css']
+            selector: 'common-footer',
+            template: "\n        <div class=\"footer\">\n            <div *ngFor=\"let page of pages\" [innerHTML]=\"page.text\"></div>\n        </div>\n    ",
+            styleUrls: ['app/footer.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, page_service_1.PageService])
-    ], WelcomeComponent);
-    return WelcomeComponent;
+    ], FooterComponent);
+    return FooterComponent;
 }());
-exports.WelcomeComponent = WelcomeComponent;
-//# sourceMappingURL=welcome.component.js.map
+exports.FooterComponent = FooterComponent;
+//# sourceMappingURL=footer.component.js.map
