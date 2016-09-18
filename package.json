@@ -9,10 +9,10 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
-    "clean": "rm dist/app/my.bundle.js",
-    "build": "mkdir dist/app",
-    "build_prod": "browserify app/main.js > dist/app/my.bundle.js",
-    "serve": "http-server ."
+    "clean": "rm -rf dist",
+    "build": "mkdir -p dist/app && mkdir -p dist/libs",
+    "build_prod": "browserify app/main.js > dist/app/mybundle.js && grunt && npm run serve",
+    "serve": "http-server ./dist"
   },
   "repository": {},
   "author": "jwebster",
@@ -27,17 +27,24 @@
     "@angular/platform-browser-dynamic": "2.0.0-rc.7",
     "@angular/router": "3.0.0-rc.3",
     "@angular/upgrade": "2.0.0-rc.7",
+    "angular2-in-memory-web-api": "0.0.19",
+    "bootstrap": "^3.3.6",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.6.3",
+    "http-server": "^0.9.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.27",
-    "zone.js": "^0.6.21",
-    "angular2-in-memory-web-api": "0.0.19",
-    "bootstrap": "^3.3.6"
+    "zone.js": "^0.6.21"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
     "concurrently": "^2.2.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-stripcomments": "^0.6.0",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.2",
     "typings": "^1.3.2"
