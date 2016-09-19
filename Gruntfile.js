@@ -4,8 +4,9 @@ module.exports = function(grunt) {
         concat: {
             options: {
                 stripBanners: true,
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                  '<%= grunt.template.today("yyyy-mm-dd") %> */',
+                // banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                //   '<%= grunt.template.today("yyyy-mm-dd") %> */',
+                banner: ''
             },
             dist: {
                 src: [
@@ -17,15 +18,6 @@ module.exports = function(grunt) {
                 dest: 'dist/libs/js/all-libs.js'
             }
         },
-
-        // uglify: {
-        //     build: {
-        //         files: {
-        //             src: 'dist/libs/js/all-libs.js',
-        //             dest: 'dist/libs/js/all-libs.min.js'
-        //         }
-        //     }
-        // },
 
         copy: {
             main: {
@@ -75,16 +67,22 @@ module.exports = function(grunt) {
                 {
                     src: 'production.html',
                     dest: 'dist/index.html'
-                }
-            ]
+                }]
+            }
+        },
+
+        uglify: {
+            build: {
+                src: ['dist/libs/js/all-libs.js'],
+                dest: 'dist/libs/js/all-libs.min.js'
             }
         }
     });
 
-    //grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-stripcomments');
+    //grunt.loadNpmTasks('grunt-stripcomments');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['concat', 'copy']);
+    grunt.registerTask('default', ['concat', 'copy', 'uglify']);
 };

@@ -10,7 +10,7 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "clean": "rm -rf dist",
-    "build": "mkdir -p dist/app && mkdir -p dist/libs",
+    "build": "mkdir dist && cd dist && mkdir libs && mkdir app",
     "build_prod": "browserify app/main.js > dist/app/mybundle.js && grunt && npm run serve",
     "serve": "http-server ./dist"
   },
