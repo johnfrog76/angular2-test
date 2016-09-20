@@ -21,6 +21,59 @@ var SongsComponent = (function () {
         this.songService.getSongs()
             .subscribe(function (songs) { return _this.songs = songs; });
     };
+    SongsComponent.prototype.startStop = function (stop, audioEle, song, scope) {
+        var setProgress = function (song, scope) {
+            var myAudio = document.getElementById(audioEle);
+            var currentTime = myAudio.currentTime;
+            var duration = myAudio.duration;
+            var p = currentTime / duration * 100;
+            if (p < 100) {
+                song.progress = p;
+            }
+            else {
+                clearInterval(scope.myInterval);
+            }
+        };
+        if (stop) {
+            clearInterval(this.myInterval);
+        }
+        else {
+            var scope_1 = this;
+            this.myInterval = setInterval(function () {
+                setProgress(song, scope_1);
+            }, 1000, song, scope_1);
+        }
+    };
+    SongsComponent.prototype.pauseAll = function () {
+        var audios = (document.getElementsByTagName('audio'));
+        var i;
+        var len = audios.length;
+        for (i = 0; i < len; i++) {
+            audios[i].pause();
+            this.songs[i].activeCls = false;
+        }
+    };
+    SongsComponent.prototype.playSong = function (audioEle, btnId, progId, song) {
+        var audio = document.getElementById(audioEle);
+        var btn = document.getElementById(btnId);
+        if (audio.paused === true) {
+            this.pauseAll();
+            audio.play();
+            this.startStop(null, audioEle, song, null);
+            song.activeCls = true;
+            audio.onended = function () {
+                song.activeCls = false;
+            };
+        }
+        else {
+            song.activeCls = false;
+            this.pauseAll();
+            this.startStop('stop', null, null, null);
+        }
+    };
+    SongsComponent.prototype.ngOnDestroy = function () {
+        this.startStop('stop', null, null, null);
+    };
     SongsComponent.prototype.ngOnInit = function () {
         this.getSongs();
     };

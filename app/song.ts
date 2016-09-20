@@ -5,4 +5,6 @@ export class Song {
   audioclip: string;
   active: boolean;
   order: string;
+  progress: number;
+  activeCls: boolean;
 }

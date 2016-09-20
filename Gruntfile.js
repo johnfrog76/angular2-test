@@ -13,7 +13,8 @@ module.exports = function(grunt) {
                     'node_modules/core-js/client/shim.min.js',
                     'node_modules/zone.js/dist/zone.js',
                     'node_modules/reflect-metadata/Reflect.js',
-                    'node_modules/systemjs/dist/system.src.js'
+                    'node_modules/systemjs/dist/system.src.js',
+                    'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js'
                 ],
                 dest: 'dist/libs/js/all-libs.js'
             }

@@ -20,6 +20,13 @@ export class SongService {
 
     private extractData(res: Response) {
         let body = res.json();
+        let i: number;
+        let len: number = body.length;
+
+        for (i = 0; i < len; i++) {
+            body[i].progress = 0;
+            body[i].activeCls = false;
+        }
         return body || {};
     }
 

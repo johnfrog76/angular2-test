@@ -28,6 +28,8 @@
     "@angular/router": "3.0.0-rc.3",
     "@angular/upgrade": "2.0.0-rc.7",
     "angular2-in-memory-web-api": "0.0.19",
+    "ng2-bootstrap": "",
+    "moment": "",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.1",
     "font-awesome": "^4.6.3",

@@ -23,6 +23,12 @@ var SongService = (function () {
     };
     SongService.prototype.extractData = function (res) {
         var body = res.json();
+        var i;
+        var len = body.length;
+        for (i = 0; i < len; i++) {
+            body[i].progress = 0;
+            body[i].activeCls = false;
+        }
         return body || {};
     };
     SongService.prototype.handleError = function (error) {

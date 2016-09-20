@@ -1,10 +1,15 @@
 <music-intro></music-intro>
-<ul class="songs">
+<ul class="song-list">
     <li *ngFor="let song of songs">
         <div>{{song.title}}</div>
-        <audio id="audio{{song.id}}" preload="auto" controls="true">
-            <source type="audio/mpeg" src="http://katie.sbtest.com/upload/{{song.audioclip}}">
+        <audio id="audio{{song.id}}" preload="auto" >
+            <source type="audio/mpeg" [src]="'http://katie.sbtest.com/upload/'+ song.audioclip">
                 Your browser does not support the audio element.
         </audio>
+        <progressbar id="prog{{song.id}}" [animate]="false" [value]="song.progress" type="success"></progressbar>
+        <button id="btn{{song.id}}" [class.active]="song.activeCls" class="btn btn-link btn-xs"
+            (click)="playSong('audio' + song.id, 'button' + song.id, 'prog' + song.id,  song)">
+            <span><em *ngIf="song.activeCls" class="fa fa-pause"></em><em *ngIf="!song.activeCls" class="fa fa-play"></em></span>
+        </button>
     </li>
 </ul>
