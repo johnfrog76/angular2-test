@@ -233,6 +233,7 @@ a:hover {
     background-color: #424242;
     margin: 0 0 1rem 0;
     border: 0;
+    break-inside: avoid;
   }
 }
 
