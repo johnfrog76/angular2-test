@@ -72,8 +72,9 @@ export class SongsComponent implements OnInit {
             audio.play();
             this.startStop(null, audioEle, song, null);
             song.activeCls = true;
-            audio.onended = function () {
+            audio.onended = (): void => {
                 song.activeCls = false;
+                song.progress = 0;
             };
         } else {
             song.activeCls = false;

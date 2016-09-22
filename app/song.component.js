@@ -63,6 +63,7 @@ var SongsComponent = (function () {
             song.activeCls = true;
             audio.onended = function () {
                 song.activeCls = false;
+                song.progress = 0;
             };
         }
         else {
